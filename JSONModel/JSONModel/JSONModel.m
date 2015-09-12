@@ -253,8 +253,8 @@ static JSONKeyMapper* globalKeyMapper = nil;
         for (NSString *missedKey in requiredProperties) {
             BOOL isInfo = NO;
             for (NSString *name in incomingKeysArray) {
-                NSString *ignoredCaseName = [name uppercaseString];
-                NSString *ignoredCaseKey  = [missedKey uppercaseString];
+                NSString *ignoredCaseName = [name lowercaseString];
+                NSString *ignoredCaseKey  = [missedKey lowercaseString];
                 if ([ignoredCaseName rangeOfString:ignoredCaseKey].location != NSNotFound) {
                     isInfo = YES;
                     break;
@@ -338,8 +338,6 @@ static JSONKeyMapper* globalKeyMapper = nil;
                             [infoKey setObject:value forKey:newPropertyName];
                         }
                     }
-                    
-                    
                 }
                 
                 jsonValue = [infoKey copy];

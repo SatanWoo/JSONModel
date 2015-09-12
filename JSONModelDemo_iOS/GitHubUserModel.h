@@ -17,8 +17,8 @@
 
 ////@property (strong, nonatomic) NSString* login;
 ////@property (strong, nonatomic) NSURL* html_url;
-//@property (strong, nonatomic) NSString* ID;
-//@property (strong, nonatomic) NSString* name;
+@property (strong, nonatomic) NSString* ID;
+@property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) GitHubUserInfo *info;
 
 @end

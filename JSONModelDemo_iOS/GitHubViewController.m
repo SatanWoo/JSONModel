@@ -23,39 +23,19 @@
 {
     self.title = @"GitHub.com user lookqup";
     [HUD showUIBlockingIndicatorWithText:@"Fetching JSON"];
-    //\"ID\":1, \"name\":\"Marin\",
-    NSString* json = @"{\"infoNo\":\"model 1586\", \"infoDesc\":\"a short description\"}";
+    //
+    NSString* json = @"{\"ID\":1, \"name\":\"Marin\", \"infoNo\":\"model 1586\", \"infoDesc\":\"a short description\"}";
     
     dispatch_async(dispatch_get_main_queue(), ^{
         //code executed on the main queue
         //5
         
         user = [[GitHubUserModel alloc] initWithString:json error:NULL];
-        items = @[user.info.desc, user.info.no];
+        items = @[user.info.desc, user.info.no, user.name, user.ID];
         
         [self.tableView reloadData];
         [HUD hideUIBlockingIndicator];
     });
-    //1
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        //code executed in the background
-//        //2
-//        NSData* ghData = [NSData dataWithContentsOfURL:
-//                            [NSURL URLWithString:@"https://api.github.com/users/icanzilb"]
-//                            ];
-//        //3
-//        NSDictionary* json = nil;
-//        if (ghData) {
-//            json = [NSJSONSerialization
-//                    JSONObjectWithData:ghData
-//                    options:kNilOptions
-//                    error:nil];
-//        }
-//        
-//        //4
-//        
-//        
-//    });
 }
 
 #pragma mark - table methods
