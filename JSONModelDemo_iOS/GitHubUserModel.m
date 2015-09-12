@@ -8,6 +8,10 @@
 
 #import "GitHubUserModel.h"
 
+@implementation GitHubUserInfo
+
+@end
+
 @implementation GitHubUserModel
 
 @end

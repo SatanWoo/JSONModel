@@ -181,7 +181,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
         if (err) *err = [JSONModelError errorModelIsInvalid];
         return nil;
     }
-    
+    // Class infoClass = NSClassFromString([NSString stringWithFormat:@"%@Info", NSStringFromClass(class)]);
     //check incoming data structure
     if (![self __doesDictionary:dict matchModelWithKeyMapper:self.__keyMapper error:err]) {
         return nil;
@@ -249,6 +249,26 @@ static JSONKeyMapper* globalKeyMapper = nil;
         //get a list of the missing properties
         [requiredProperties minusSet:incomingKeys];
         
+        BOOL missed = NO;
+        for (NSString *missedKey in requiredProperties) {
+            BOOL isInfo = NO;
+            for (NSString *name in incomingKeysArray) {
+                NSString *ignoredCaseName = [name uppercaseString];
+                NSString *ignoredCaseKey  = [missedKey uppercaseString];
+                if ([ignoredCaseName rangeOfString:ignoredCaseKey].location != NSNotFound) {
+                    isInfo = YES;
+                    break;
+                }
+            }
+            
+            if (!isInfo) {
+                missed = YES;
+                break;
+            }
+        }
+        
+        if (!missed) return YES;
+        
         //not all required properties are in - invalid input
         JMLog(@"Incoming data was invalid [%@ initWithDictionary:]. Keys missing: %@", self.class, requiredProperties);
         
@@ -303,13 +323,36 @@ static JSONKeyMapper* globalKeyMapper = nil;
             //skip this property, continue with next property
             if (property.isOptional || !validation) continue;
             
-            if (err) {
+            if ([property.type isSubclassOfClass:[JSONModel class]]) {
+                NSMutableDictionary *infoKey = [NSMutableDictionary new];
+                for (NSString *name in dict.allKeys) {
+                    id value = [dict objectForKey:name];
+                    NSMutableString *ignoredCaseName = [NSMutableString stringWithString:[name lowercaseString]];
+                    NSString *ignoredCaseKey  = [property.name lowercaseString];
+                    
+                    NSRange range = [ignoredCaseName rangeOfString:ignoredCaseKey];
+                    if (range.location != NSNotFound) {
+                        [ignoredCaseName deleteCharactersInRange:range];
+                        NSString *newPropertyName = [ignoredCaseName copy];
+                        if (!isNull(value)) {
+                            [infoKey setObject:value forKey:newPropertyName];
+                        }
+                    }
+                    
+                    
+                }
+                
+                jsonValue = [infoKey copy];
+            }
+
+            if (err && isNull(jsonValue)) {
                 //null value for required property
                 NSString* msg = [NSString stringWithFormat:@"Value of required model key %@ is null", property.name];
                 JSONModelError* dataErr = [JSONModelError errorInvalidDataWithMessage:msg];
                 *err = [dataErr errorByPrependingKeyPathComponent:property.name];
+                
+                return NO;
             }
-            return NO;
         }
         
         Class jsonValueClass = [jsonValue class];
@@ -569,7 +612,6 @@ static JSONKeyMapper* globalKeyMapper = nil;
         for (unsigned int i = 0; i < propertyCount; i++) {
 
             JSONModelClassProperty* p = [[JSONModelClassProperty alloc] init];
-
             //get property name
             objc_property_t property = properties[i];
             const char *propertyName = property_getName(property);

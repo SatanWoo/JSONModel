@@ -21,38 +21,41 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    self.title = @"GitHub.com user lookup";
+    self.title = @"GitHub.com user lookqup";
     [HUD showUIBlockingIndicatorWithText:@"Fetching JSON"];
+    //\"ID\":1, \"name\":\"Marin\",
+    NSString* json = @"{\"infoNo\":\"model 1586\", \"infoDesc\":\"a short description\"}";
     
-    //1
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //code executed in the background
-        //2
-        NSData* ghData = [NSData dataWithContentsOfURL:
-                            [NSURL URLWithString:@"https://api.github.com/users/icanzilb"]
-                            ];
-        //3
-        NSDictionary* json = nil;
-        if (ghData) {
-            json = [NSJSONSerialization
-                    JSONObjectWithData:ghData
-                    options:kNilOptions
-                    error:nil];
-        }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //code executed on the main queue
+        //5
         
-        //4
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //code executed on the main queue
-            //5
-            
-            user = [[GitHubUserModel alloc] initWithDictionary:json error:NULL];
-            items = @[user.login, user.html_url, user.company, user.name, user.blog];
-            
-            [self.tableView reloadData];
-            [HUD hideUIBlockingIndicator];
-        });
+        user = [[GitHubUserModel alloc] initWithString:json error:NULL];
+        items = @[user.info.desc, user.info.no];
         
+        [self.tableView reloadData];
+        [HUD hideUIBlockingIndicator];
     });
+    //1
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        //code executed in the background
+//        //2
+//        NSData* ghData = [NSData dataWithContentsOfURL:
+//                            [NSURL URLWithString:@"https://api.github.com/users/icanzilb"]
+//                            ];
+//        //3
+//        NSDictionary* json = nil;
+//        if (ghData) {
+//            json = [NSJSONSerialization
+//                    JSONObjectWithData:ghData
+//                    options:kNilOptions
+//                    error:nil];
+//        }
+//        
+//        //4
+//        
+//        
+//    });
 }
 
 #pragma mark - table methods

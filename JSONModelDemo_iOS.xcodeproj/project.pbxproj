@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A50001D19C5DCCF00C161A0 /* InitWithDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A50001C19C5DCCF00C161A0 /* InitWithDataTests.m */; };
+		195AD4F71BA3E9CB00917B29 /* ProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 195AD4F61BA3E9CB00917B29 /* ProductModel.m */; };
+		195AD4FA1BA3EA4000917B29 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195AD4F91BA3EA4000917B29 /* ProductViewController.m */; };
+		195AD4FC1BA3EA5600917B29 /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195AD4FB1BA3EA5600917B29 /* ProductViewController.xib */; };
 		358FD078D3C0D56C77ACD770 /* ExtremeNestingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 358FDBE28A19497358D1A6DA /* ExtremeNestingModel.m */; };
 		358FD179E0B41C47C67713B5 /* InteractionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 358FDCB3CFE05DBA0DE27E5F /* InteractionModel.m */; };
 		358FD61804BD21F41035348E /* ExtremeNestingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 358FDBA42551FF88466BD5C3 /* ExtremeNestingTests.m */; };
 		358FD640BFEAB00349FBBA4A /* DrugModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 358FD25356988AC33EA6A935 /* DrugModel.m */; };
+		4A50001D19C5DCCF00C161A0 /* InitWithDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A50001C19C5DCCF00C161A0 /* InitWithDataTests.m */; };
 		69286BDA17FA280900D1BA81 /* nestedDataWithDictionaryError.json in Resources */ = {isa = PBXBuildFile; fileRef = 69286BD917FA280900D1BA81 /* nestedDataWithDictionaryError.json */; };
 		69286BDB17FA280900D1BA81 /* nestedDataWithDictionaryError.json in Resources */ = {isa = PBXBuildFile; fileRef = 69286BD917FA280900D1BA81 /* nestedDataWithDictionaryError.json */; };
 		697852FD17D934B5006BFCD0 /* nestedDataWithTypeMismatchOnImages.json in Resources */ = {isa = PBXBuildFile; fileRef = 697852FC17D934B5006BFCD0 /* nestedDataWithTypeMismatchOnImages.json */; };
@@ -156,7 +159,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4A50001C19C5DCCF00C161A0 /* InitWithDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitWithDataTests.m; sourceTree = "<group>"; };
+		195AD4F51BA3E9CB00917B29 /* ProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductModel.h; sourceTree = "<group>"; };
+		195AD4F61BA3E9CB00917B29 /* ProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductModel.m; sourceTree = "<group>"; };
+		195AD4F81BA3EA4000917B29 /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
+		195AD4F91BA3EA4000917B29 /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
+		195AD4FB1BA3EA5600917B29 /* ProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
 		358FD25356988AC33EA6A935 /* DrugModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugModel.m; sourceTree = "<group>"; };
 		358FD7AD55FD213CBAAB460F /* ExtremeNestingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtremeNestingModel.h; sourceTree = "<group>"; };
 		358FD807C3E86F5DC4058645 /* ExtremeNestingTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtremeNestingTests.h; sourceTree = "<group>"; };
@@ -165,6 +172,7 @@
 		358FDBE28A19497358D1A6DA /* ExtremeNestingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtremeNestingModel.m; sourceTree = "<group>"; };
 		358FDCB3CFE05DBA0DE27E5F /* InteractionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionModel.m; sourceTree = "<group>"; };
 		358FDED5E028AA00D3E6564D /* InteractionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionModel.h; sourceTree = "<group>"; };
+		4A50001C19C5DCCF00C161A0 /* InitWithDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitWithDataTests.m; sourceTree = "<group>"; };
 		69286BD917FA280900D1BA81 /* nestedDataWithDictionaryError.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nestedDataWithDictionaryError.json; sourceTree = "<group>"; };
 		697852FC17D934B5006BFCD0 /* nestedDataWithTypeMismatchOnImages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nestedDataWithTypeMismatchOnImages.json; sourceTree = "<group>"; };
 		697852FE17D93546006BFCD0 /* nestedDataWithTypeMismatchOnImagesObject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nestedDataWithTypeMismatchOnImagesObject.json; sourceTree = "<group>"; };
@@ -371,6 +379,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		195AD4F31BA3E77200917B29 /* ZiqiTest */ = {
+			isa = PBXGroup;
+			children = (
+				195AD4F41BA3E9B500917B29 /* ProductModel */,
+				195AD4F81BA3EA4000917B29 /* ProductViewController.h */,
+				195AD4F91BA3EA4000917B29 /* ProductViewController.m */,
+				195AD4FB1BA3EA5600917B29 /* ProductViewController.xib */,
+			);
+			name = ZiqiTest;
+			sourceTree = "<group>";
+		};
+		195AD4F41BA3E9B500917B29 /* ProductModel */ = {
+			isa = PBXGroup;
+			children = (
+				195AD4F51BA3E9CB00917B29 /* ProductModel.h */,
+				195AD4F61BA3E9CB00917B29 /* ProductModel.m */,
+			);
+			name = ProductModel;
+			sourceTree = "<group>";
+		};
 		9C05B2BB168CE9DE0054215E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +587,7 @@
 		9CBBBEE2166B6CF0008B4326 /* JSONModelDemo_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				195AD4F31BA3E77200917B29 /* ZiqiTest */,
 				9CBBBFAD166BB87B008B4326 /* DemoApp */,
 				9CBBBF87166BAC31008B4326 /* libs */,
 				9CBBBF9D166BB27E008B4326 /* YouTubeDemo */,
@@ -872,6 +901,7 @@
 				9C66DFD6168CEF530015CCDF /* nestedDataWithArrayError.json in Resources */,
 				9C66DFD7168CEF530015CCDF /* post.json in Resources */,
 				9C66DFD8168CEF530015CCDF /* primitives.json in Resources */,
+				195AD4FC1BA3EA5600917B29 /* ProductViewController.xib in Resources */,
 				9C66DFD9168CEF530015CCDF /* primitivesWithErrors.json in Resources */,
 				9C66DFDA168CEF530015CCDF /* withOptProp.json in Resources */,
 				9C66DFDB168CEF530015CCDF /* withoutOptProp.json in Resources */,
@@ -912,6 +942,7 @@
 				9CBBBEF6166B6CF0008B4326 /* MasterViewController.m in Sources */,
 				9CBBBF77166BA80F008B4326 /* KivaViewController.m in Sources */,
 				9CBBBF80166BA86A008B4326 /* LoanModel.m in Sources */,
+				195AD4F71BA3E9CB00917B29 /* ProductModel.m in Sources */,
 				9CBBBF81166BA86A008B4326 /* LocationModel.m in Sources */,
 				9CBBBF82166BA86A008B4326 /* KivaFeed.m in Sources */,
 				9CBBBF91166BAC54008B4326 /* HUD.m in Sources */,
@@ -933,6 +964,7 @@
 				9C66E02A168CF0AA0015CCDF /* JSONModelError.m in Sources */,
 				9C66E02C168CF0AA0015CCDF /* NSArray+JSONModel.m in Sources */,
 				9C66E02E168CF0AA0015CCDF /* JSONAPI.m in Sources */,
+				195AD4FA1BA3EA4000917B29 /* ProductViewController.m in Sources */,
 				9C66E030168CF0AA0015CCDF /* JSONHTTPClient.m in Sources */,
 				9C66E032168CF0AA0015CCDF /* JSONModel+networking.m in Sources */,
 				9C66E034168CF0AA0015CCDF /* JSONKeyMapper.m in Sources */,

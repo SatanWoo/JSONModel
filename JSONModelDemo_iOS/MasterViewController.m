@@ -118,13 +118,13 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    NSString* json = @"{\"id\":1, \"answer\": {\"name1\":\"marin\"}, \"dict\":[], \"description\":\"Marin\"}";
-    TopModel* tm = [[TopModel alloc] initWithString:json error:nil];
-    NSLog(@"tm: %@", tm.toDictionary);
-    NSLog(@"to string: %@", tm.toJSONString);
-    tm = [[TopModel alloc] initWithData:[json dataUsingEncoding:NSUTF8StringEncoding] error:nil];
-    NSLog(@"tm - WithData : %@", tm.toDictionary);
-    NSLog(@"to string - WithData : %@", tm.toJSONString);
+//    NSString* json = @"{\"id\":1, \"answer\": {\"name1\":\"marin\"}, \"dict\":[], \"description\":\"Marin\"}";
+//    TopModel* tm = [[TopModel alloc] initWithString:json error:nil];
+//    NSLog(@"tm: %@", tm.toDictionary);
+//    NSLog(@"to string: %@", tm.toJSONString);
+//    tm = [[TopModel alloc] initWithData:[json dataUsingEncoding:NSUTF8StringEncoding] error:nil];
+//    NSLog(@"tm - WithData : %@", tm.toDictionary);
+//    NSLog(@"to string - WithData : %@", tm.toJSONString);
 }
 
 -(IBAction)actionLoadCall:(id)sender
@@ -142,7 +142,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Demos";
-        _objects = [NSMutableArray arrayWithArray:@[@"Kiva.org demo", @"GitHub demo", @"Youtube demo", @"Used for storage"]];
+        _objects = [NSMutableArray arrayWithArray:@[@"GitHub demo"]];
     }
     return self;
 }
@@ -155,7 +155,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return 1;
 }
 
 // Customize the appearance of table view cells.
@@ -177,25 +177,25 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
-        case 0:{
-            KivaViewController* kiva  = [[KivaViewController alloc] initWithNibName:@"KivaViewController" bundle:nil];
-            [self.navigationController pushViewController:kiva animated:YES];
-        }break;
+//        case 0:{
+//            KivaViewController* kiva  = [[KivaViewController alloc] initWithNibName:@"KivaViewController" bundle:nil];
+//            [self.navigationController pushViewController:kiva animated:YES];
+//        }break;
             
-        case 1:{
+        case 0:{
             GitHubViewController* gh  = [[GitHubViewController alloc] initWithNibName:@"GitHubViewController" bundle:nil];
             [self.navigationController pushViewController:gh animated:YES];
         }break;
             
-        case 2:{
-            YouTubeViewController* yt  = [[YouTubeViewController alloc] initWithNibName:@"YouTubeViewController" bundle:nil];
-            [self.navigationController pushViewController:yt animated:YES];
-        }break;
-            
-        case 3:{
-            StorageViewController* sc  = [[StorageViewController alloc] initWithNibName:@"StorageViewController" bundle:nil];
-            [self.navigationController pushViewController:sc animated:YES];
-        }break;
+//        case 2:{
+//            YouTubeViewController* yt  = [[YouTubeViewController alloc] initWithNibName:@"YouTubeViewController" bundle:nil];
+//            [self.navigationController pushViewController:yt animated:YES];
+//        }break;
+//            
+//        case 3:{
+//            StorageViewController* sc  = [[StorageViewController alloc] initWithNibName:@"StorageViewController" bundle:nil];
+//            [self.navigationController pushViewController:sc animated:YES];
+//        }break;
 
         default:
             break;
